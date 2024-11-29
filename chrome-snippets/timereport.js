@@ -1,6 +1,18 @@
-const CURRENT_YEAR = "2024";
 const DEFAULT_START_HOUR = "08:00";
 const DEFAULT_END_HOUR = "16:00";
+
+/*
+ * To find these two, go to the calendar view, open devtools and 
+ * look for the data-fields below and insert them into the const.
+ * Example: const ASSIGMENT_ID = "123123-123123-123123-123123";
+ * 
+ * data-assignmentid
+ * data-timetypeid
+ */
+const ASSIGNMENT_ID = "<AssignmentId>";
+const TIME_TYPE_ID = "<TimeTypeId>";
+
+const CURRENT_YEAR = "2024";
 
 const formatDate = (year, month, day, time) => {
     const dayWithLeadingZero = day.length === 1 ? "0" + day : day;
@@ -57,8 +69,8 @@ const postTidRapport = () => {
     });
 
     var data = {
-        AssignmentId: "",
-        TimeTypeId: "",
+        AssignmentId: ASSIGNMENT_ID,
+        TimeTypeId: TIME_TYPE_ID,
         SelectedPeriods: selectedPeriods
     };
     
