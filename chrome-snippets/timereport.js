@@ -1,6 +1,8 @@
 /**
  * INSTRUCTIONS
  *
+ * Copy the contents into this file into devtools > Sources > Snippets.
+ *
  * 0. Define ASSIGNMENT_ID and TIME_TYPE_ID below
  * 
  * 1. Go to the time reporting site
@@ -9,7 +11,7 @@
  * 4. Select the dates you want to time report
  * 5. When all desired dates are selected, press Ny tidrapport
  *   -> Modal should open
- * 6. Run the script
+ * 6. Run the script (ctrl + enter)
  *   -> Refresh the page and dates should be populated
  *
  * 7. Now adjust the dates that deviate from the "standard" time manually
