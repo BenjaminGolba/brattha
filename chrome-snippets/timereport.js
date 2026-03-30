@@ -28,10 +28,10 @@ const DEFAULT_END_HOUR = "16:00";
  * data-assignmentid
  * data-timetypeid
  */
-const ASSIGNMENT_ID = "<AssignmentId>";
-const TIME_TYPE_ID = "<TimeTypeId>";
+const ASSIGNMENT_ID = "FYLLI";
+const TIME_TYPE_ID = "FYLLI";
 
-const CURRENT_YEAR = "2024";
+const CURRENT_YEAR = "2026";
 
 const formatDate = (year, month, day, time) => {
   const dayWithLeadingZero = day.length === 1 ? "0" + day : day;
@@ -73,11 +73,19 @@ const postTidRapport = () => {
 
   const foundDatesToReport = findDates();
 
+  const getStartHour = (dateStr) => {
+    const dayOfWeek = new Date(dateStr).getDay();
+    if (dayOfWeek === 2 || dayOfWeek === 3) {
+      return "09:00";
+    }
+    return DEFAULT_START_HOUR;
+  };
+
   const selectedPeriods = [];
   foundDatesToReport.map((foundDate) => {
     selectedPeriods.push({
       Date: foundDate,
-      StartTime: foundDate + " " + DEFAULT_START_HOUR,
+      StartTime: foundDate + " " + getStartHour(foundDate),
       EndTime: foundDate + " " + DEFAULT_END_HOUR,
       Mode: "0",
       CommentsFromResource: "",
